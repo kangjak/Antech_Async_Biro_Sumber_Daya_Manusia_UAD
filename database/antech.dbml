@@ -1,0 +1,243 @@
+Table unit {
+  id int [pk, increment]
+  name varchar
+  unit_type varchar
+  is_active boolean
+}
+
+Table employees {
+  id int [pk, increment]
+  nip varchar [unique]
+  nidn varchar [unique]
+  full_name varchar
+  category varchar
+  gender varchar
+  birth_place varchar
+  birth_date date
+  email varchar [unique]
+  phone varchar
+  address text
+  highest_education varchar
+  unit_id int [ref: > unit.id]
+  supervisor_id int [ref: > employees.id]
+  application_id int [unique, ref: - applications.id]
+  employment_status varchar
+  join_date date
+  end_date date
+  retirement_status varchar
+  retirement_age int
+  retirement_planned_date date
+  retirement_proposed_at timestamp
+  retirement_processed_by int [ref: > users.id]
+  retirement_sk_number varchar
+  retirement_sk_date date
+  retirement_completed_at timestamp
+  retirement_notes text
+}
+
+Table users {
+  id int [pk, increment]
+  employee_id int [unique, ref: > employees.id]
+  username varchar
+  password_hash varchar
+  is_active boolean
+  last_login_at timestamp
+  role_unit_id int [ref: > unit.id]
+  role_name varchar
+}
+
+Table vacancies {
+  id int [pk, increment]
+  unit_id int [ref: > unit.id]
+  title varchar
+  category varchar
+  description text
+  min_qualification varchar
+  quota int
+  open_date date
+  close_date date
+  status varchar
+  created_by int [ref: > users.id]
+}
+
+Table applications {
+  id int [pk, increment]
+  vacancy_id int [ref: > vacancies.id]
+  applicant_name varchar
+  applicant_email varchar
+  applicant_phone varchar
+  birth_date date
+  highest_education varchar
+  cv_path varchar
+  applied_at timestamp
+  aik_score decimal
+  current_stage varchar
+  stage_result varchar
+  stage_score decimal
+  stage_assessed_by int [ref: > users.id]
+  stage_assessed_at timestamp
+  stage_notes text
+  status varchar
+  decided_at timestamp
+}
+
+Table request_type {
+  id int [pk, increment]
+  kind varchar
+  code varchar
+  name varchar
+  applies_to varchar
+  annual_quota int
+  requires_doctorate boolean
+  period_type varchar
+  description text
+  is_active boolean
+}
+
+Table leave_balances {
+  id int [pk, increment]
+  employee_id int [ref: > employees.id]
+  request_type_id int [ref: > request_type.id]
+  year int
+  quota_days int
+  used_days int
+  version int
+}
+
+Table employee_request {
+  id int [pk, increment]
+  request_kind varchar
+  employee_id int [ref: > employees.id]
+  request_type_id int [ref: > request_type.id]
+  start_date date
+  end_date date
+  total_days int
+  work_date date
+  start_time time
+  end_time time
+  total_hours decimal
+  period_label varchar
+  amount decimal
+  reason text
+  status varchar
+  approver_id int [ref: > employees.id]
+  submitted_at timestamp
+  decided_at timestamp
+  decision_note text
+  version int
+}
+
+Table work_schedules {
+  id int [pk, increment]
+  name varchar
+  unit_id int [ref: > unit.id]
+  category varchar
+  valid_from date
+  valid_until date
+  is_published boolean
+  published_at timestamp
+  created_by int [ref: > users.id]
+  first_day varchar
+  last_day varchar
+  start_time time
+  end_time time
+}
+
+Table rank_histories {
+  id int [pk, increment]
+  employee_id int [ref: > employees.id]
+  rank_name varchar
+  credit_points decimal
+  is_accelerated boolean
+  status varchar
+  submitted_at timestamp
+  approver_id int [ref: > employees.id]
+  decided_at timestamp
+  effective_date date
+  sk_number varchar
+  sk_date date
+  decision_note text
+  rank_grade varchar
+  functional_position varchar
+}
+
+Table development_activities {
+  id int [pk, increment]
+  employee_id int [ref: > employees.id]
+  activity_type varchar
+  title varchar
+  organizer varchar
+  start_date date
+  end_date date
+  status varchar
+  degree_level varchar
+  study_program varchar
+  expected_end_date date
+  scholarship_name varchar
+  scholarship_status varchar
+  mentoring_notes text
+  training_type varchar
+  duration_hours int
+  certificate_number varchar
+  certificate_path varchar
+}
+
+Table bpjs_memberships {
+  id int [pk, increment]
+  employee_id int [ref: > employees.id]
+  bpjs_type varchar
+  membership_number varchar
+  registered_date date
+  status varchar
+  end_date date
+  archived_at timestamp
+}
+
+Table performance_evaluation {
+  id int [pk, increment]
+  employee_id int [ref: > employees.id]
+  eval_type varchar
+  period_label varchar
+  academic_year varchar
+  semester varchar
+  period_start date
+  period_end date
+  teaching_credit decimal
+  research_credit decimal
+  service_credit decimal
+  support_credit decimal
+  total_credit decimal
+  reviewer_id int [ref: > employees.id]
+  status varchar
+  reviewed_at timestamp
+  final_score decimal
+  rating varchar
+  version int
+  is_current boolean
+  revision_reason text
+}
+
+Table performance_items {
+  id int [pk, increment]
+  evaluation_id int [ref: > performance_evaluation.id]
+  description text
+  unit varchar
+  target_value decimal
+  realization_value decimal
+  weight decimal
+  score decimal
+}
+
+Table activity_logs {
+  id int [pk, increment]
+  actor_id int [ref: > users.id]
+  action varchar
+  entity_type varchar
+  entity_id int
+  old_status varchar
+  new_status varchar
+  reason text
+  details text
+  ip_address varchar
+  created_at timestamp
+}
