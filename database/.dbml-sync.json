@@ -1,0 +1,3739 @@
+{
+    "tables": [
+        {
+            "name": "unit",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": true,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "name",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "unit_type",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "is_active",
+                    "type": {
+                        "name": "boolean",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "name": "employees",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": true,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "nip",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": true,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "nidn",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": true,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "full_name",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "category",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "gender",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "birth_place",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "birth_date",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "email",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": true,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "phone",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "address",
+                    "type": {
+                        "name": "text",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "highest_education",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "unit_id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "supervisor_id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "employment_status",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "join_date",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "end_date",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "retirement_status",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "retirement_age",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "retirement_planned_date",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "retirement_proposed_at",
+                    "type": {
+                        "name": "timestamp",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "retirement_processed_by",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "retirement_sk_number",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "retirement_sk_date",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "retirement_completed_at",
+                    "type": {
+                        "name": "timestamp",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "retirement_notes",
+                    "type": {
+                        "name": "text",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "name": "users",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": true,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "employee_id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": true,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "username",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": true,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "password_hash",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "is_active",
+                    "type": {
+                        "name": "boolean",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "last_login_at",
+                    "type": {
+                        "name": "timestamp",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "role_unit_id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "role_name",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "name": "vacancies",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": true,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "unit_id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "title",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "category",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "description",
+                    "type": {
+                        "name": "text",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "min_qualification",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "quota",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "open_date",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "close_date",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "status",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "created_by",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "name": "applications",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": true,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "vacancy_id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "employee_id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": true,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "applicant_name",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "applicant_email",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "applicant_phone",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "birth_date",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "highest_education",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "cv_path",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "applied_at",
+                    "type": {
+                        "name": "timestamp",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "aik_score",
+                    "type": {
+                        "name": "decimal",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "current_stage",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "stage_result",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "stage_score",
+                    "type": {
+                        "name": "decimal",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "stage_assessed_by",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "stage_assessed_at",
+                    "type": {
+                        "name": "timestamp",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "stage_notes",
+                    "type": {
+                        "name": "text",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "status",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "decided_at",
+                    "type": {
+                        "name": "timestamp",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "name": "request_type",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": true,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "kind",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "code",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "name",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "applies_to",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "annual_quota",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "requires_doctorate",
+                    "type": {
+                        "name": "boolean",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "period_type",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "description",
+                    "type": {
+                        "name": "text",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "is_active",
+                    "type": {
+                        "name": "boolean",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "name": "leave_balances",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": true,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "employee_id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "request_type_id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "year",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "quota_days",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "used_days",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "version",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "name": "employee_request",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": true,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "request_kind",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "employee_id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "request_type_id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "start_date",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "end_date",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "total_days",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "work_date",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "start_time",
+                    "type": {
+                        "name": "time",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "end_time",
+                    "type": {
+                        "name": "time",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "total_hours",
+                    "type": {
+                        "name": "decimal",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "period_label",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "amount",
+                    "type": {
+                        "name": "decimal",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "reason",
+                    "type": {
+                        "name": "text",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "status",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "approver_id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "submitted_at",
+                    "type": {
+                        "name": "timestamp",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "decided_at",
+                    "type": {
+                        "name": "timestamp",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "decision_note",
+                    "type": {
+                        "name": "text",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "version",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "name": "work_schedules",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": true,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "name",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "unit_id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "category",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "valid_from",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "valid_until",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "is_published",
+                    "type": {
+                        "name": "boolean",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "published_at",
+                    "type": {
+                        "name": "timestamp",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "created_by",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "first_day",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "last_day",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "start_time",
+                    "type": {
+                        "name": "time",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "end_time",
+                    "type": {
+                        "name": "time",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "name": "rank_histories",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": true,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "employee_id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "rank_name",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "credit_points",
+                    "type": {
+                        "name": "decimal",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "is_accelerated",
+                    "type": {
+                        "name": "boolean",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "status",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "submitted_at",
+                    "type": {
+                        "name": "timestamp",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "approver_id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "decided_at",
+                    "type": {
+                        "name": "timestamp",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "effective_date",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "sk_number",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "sk_date",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "decision_note",
+                    "type": {
+                        "name": "text",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "rank_grade",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "functional_position",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "name": "development_activities",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": true,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "employee_id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "activity_type",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "title",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "organizer",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "start_date",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "end_date",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "status",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "degree_level",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "study_program",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "expected_end_date",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "scholarship_name",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "scholarship_status",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "mentoring_notes",
+                    "type": {
+                        "name": "text",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "training_type",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "duration_hours",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "certificate_number",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "certificate_path",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "name": "bpjs_memberships",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": true,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "employee_id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "bpjs_type",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "membership_number",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "registered_date",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "status",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "end_date",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "archived_at",
+                    "type": {
+                        "name": "timestamp",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "name": "performance_evaluation",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": true,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "employee_id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "eval_type",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "period_label",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "academic_year",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "semester",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "period_start",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "period_end",
+                    "type": {
+                        "name": "date",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "teaching_credit",
+                    "type": {
+                        "name": "decimal",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "research_credit",
+                    "type": {
+                        "name": "decimal",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "service_credit",
+                    "type": {
+                        "name": "decimal",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "support_credit",
+                    "type": {
+                        "name": "decimal",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "total_credit",
+                    "type": {
+                        "name": "decimal",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "reviewer_id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "status",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "reviewed_at",
+                    "type": {
+                        "name": "timestamp",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "final_score",
+                    "type": {
+                        "name": "decimal",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "rating",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "version",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "is_current",
+                    "type": {
+                        "name": "boolean",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "revision_reason",
+                    "type": {
+                        "name": "text",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "name": "performance_items",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": true,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "evaluation_id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "description",
+                    "type": {
+                        "name": "text",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "unit",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "target_value",
+                    "type": {
+                        "name": "decimal",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "realization_value",
+                    "type": {
+                        "name": "decimal",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "weight",
+                    "type": {
+                        "name": "decimal",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "score",
+                    "type": {
+                        "name": "decimal",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "name": "activity_logs",
+            "schema": "public",
+            "note": null,
+            "columns": [
+                {
+                    "name": "id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": true,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": true,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "actor_id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "action",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "entity_type",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "entity_id",
+                    "type": {
+                        "name": "int",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "old_status",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "new_status",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "reason",
+                    "type": {
+                        "name": "text",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "details",
+                    "type": {
+                        "name": "text",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "ip_address",
+                    "type": {
+                        "name": "varchar",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                },
+                {
+                    "name": "created_at",
+                    "type": {
+                        "name": "timestamp",
+                        "schemaName": null,
+                        "args": [],
+                        "original": null
+                    },
+                    "primaryKey": false,
+                    "unique": false,
+                    "notNull": false,
+                    "autoIncrement": false,
+                    "note": null,
+                    "defaultValue": null
+                }
+            ],
+            "indexes": []
+        }
+    ],
+    "enums": [],
+    "refs": [
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "unit",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "employees",
+                    "columns": [
+                        "unit_id"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "employees",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "employees",
+                    "columns": [
+                        "supervisor_id"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "users",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "employees",
+                    "columns": [
+                        "retirement_processed_by"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "employees",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "users",
+                    "columns": [
+                        "employee_id"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "unit",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "users",
+                    "columns": [
+                        "role_unit_id"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "unit",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "vacancies",
+                    "columns": [
+                        "unit_id"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "users",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "vacancies",
+                    "columns": [
+                        "created_by"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "vacancies",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "applications",
+                    "columns": [
+                        "vacancy_id"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "employees",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "applications",
+                    "columns": [
+                        "employee_id"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "users",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "applications",
+                    "columns": [
+                        "stage_assessed_by"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "employees",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "leave_balances",
+                    "columns": [
+                        "employee_id"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "request_type",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "leave_balances",
+                    "columns": [
+                        "request_type_id"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "employees",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "employee_request",
+                    "columns": [
+                        "employee_id"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "request_type",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "employee_request",
+                    "columns": [
+                        "request_type_id"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "employees",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "employee_request",
+                    "columns": [
+                        "approver_id"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "unit",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "work_schedules",
+                    "columns": [
+                        "unit_id"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "users",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "work_schedules",
+                    "columns": [
+                        "created_by"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "employees",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "rank_histories",
+                    "columns": [
+                        "employee_id"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "employees",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "rank_histories",
+                    "columns": [
+                        "approver_id"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "employees",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "development_activities",
+                    "columns": [
+                        "employee_id"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "employees",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "bpjs_memberships",
+                    "columns": [
+                        "employee_id"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "employees",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "performance_evaluation",
+                    "columns": [
+                        "employee_id"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "employees",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "performance_evaluation",
+                    "columns": [
+                        "reviewer_id"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "performance_evaluation",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "performance_items",
+                    "columns": [
+                        "evaluation_id"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        },
+        {
+            "name": null,
+            "schema": "public",
+            "color": null,
+            "onDelete": null,
+            "onUpdate": null,
+            "endpoints": [
+                {
+                    "schema": "public",
+                    "table": "users",
+                    "columns": [
+                        "id"
+                    ],
+                    "relation": "1"
+                },
+                {
+                    "schema": "public",
+                    "table": "activity_logs",
+                    "columns": [
+                        "actor_id"
+                    ],
+                    "relation": "*"
+                }
+            ]
+        }
+    ],
+    "version": 1,
+    "generated_at": "2026-10-14T06:21:00+00:00"
+}
