@@ -10,7 +10,7 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('applications', function (Blueprint $table) {
-            $table->increments('id')->nullable();
+            $table->increments('id');
             $table->unsignedInteger('vacancy_id')->nullable(); // FK salah tipe jika signed; increments() menghasilkan unsigned INT.
             $table->foreign('vacancy_id')->references('id')->on('vacancies');
             $table->unsignedInteger('employee_id')->nullable()->unique(); // FK salah tipe jika signed; increments() menghasilkan unsigned INT.

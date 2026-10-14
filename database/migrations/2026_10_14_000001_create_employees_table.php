@@ -10,7 +10,7 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('employees', function (Blueprint $table) {
-            $table->increments('id')->nullable();
+            $table->increments('id');
             $table->string('nip', 255)->nullable()->unique();
             $table->string('nidn', 255)->nullable()->unique();
             $table->string('full_name', 255)->nullable();

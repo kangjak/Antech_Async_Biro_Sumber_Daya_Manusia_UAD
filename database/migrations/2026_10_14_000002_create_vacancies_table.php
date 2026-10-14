@@ -10,8 +10,8 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('vacancies', function (Blueprint $table) {
-            $table->increments('id')->nullable();
-            $table->unsignedInteger('unit_id')->nullable(); //jadi unsignedInteger
+            $table->increments('id');
+            $table->unsignedInteger('unit_id'); //jadi unsignedInteger
             $table->foreign('unit_id')->references('id')->on('unit');
             $table->string('title', 255)->nullable();
             $table->string('category', 255)->nullable();

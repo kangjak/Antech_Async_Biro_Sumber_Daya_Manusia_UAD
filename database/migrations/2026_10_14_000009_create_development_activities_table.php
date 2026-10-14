@@ -10,7 +10,7 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('development_activities', function (Blueprint $table) {
-            $table->increments('id')->nullable();
+            $table->increments('id');
             $table->unsignedInteger('employee_id')->nullable(); // FK harus unsigned INT agar cocok dengan ID increments() pada employees.
             $table->foreign('employee_id')->references('id')->on('employees');
             $table->string('activity_type', 255)->nullable();
