@@ -10,7 +10,7 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('employee_request', function (Blueprint $table) {
-            $table->increments('id')->nullable();
+            $table->increments('id');
             $table->string('request_kind', 255)->nullable();
             $table->unsignedInteger('employee_id')->nullable(); // FK harus unsigned INT agar cocok dengan ID increments() pada employees.
             $table->foreign('employee_id')->references('id')->on('employees');

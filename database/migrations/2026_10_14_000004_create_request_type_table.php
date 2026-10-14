@@ -10,7 +10,7 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('request_type', function (Blueprint $table) {
-            $table->increments('id')->nullable();
+            $table->increments('id');
             $table->string('kind', 255)->nullable();
             $table->string('code', 255)->nullable();
             $table->string('name', 255)->nullable();

@@ -10,7 +10,7 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('activity_logs', function (Blueprint $table) {
-            $table->increments('id')->nullable();
+            $table->increments('id');
             $table->unsignedBigInteger('actor_id')->nullable(); // FK harus unsigned BIGINT agar cocok dengan users.id dari $table->id().
             $table->foreign('actor_id')->references('id')->on('users');
             $table->string('action', 255)->nullable();
