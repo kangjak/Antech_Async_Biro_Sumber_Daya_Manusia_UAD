@@ -48,5 +48,7 @@ class Unit extends Model
         return $this->hasMany(WorkSchedule::class, 'unit_id', 'id');
     }
 
+    public $timestamps = false;
+
     // @enddbml-sync:relations
 }

@@ -49,5 +49,6 @@ class DevelopmentActivity extends Model
         return $this->belongsTo(Employee::class, 'employee_id', 'id');
     }
 
+    public $timestamps = false;
     // @enddbml-sync:relations
 }

@@ -41,5 +41,7 @@ class LeaveBalance extends Model
         return $this->belongsTo(RequestType::class, 'request_type_id', 'id');
     }
 
+    public $timestamps = false;
+
     // @enddbml-sync:relations
 }

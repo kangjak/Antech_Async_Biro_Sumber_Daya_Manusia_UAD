@@ -116,5 +116,7 @@ class Employee extends Model
         return $this->hasMany(PerformanceEvaluation::class, 'employee_id', 'id');
     }
 
+    public $timestamps = false;
+
     // @enddbml-sync:relations
 }

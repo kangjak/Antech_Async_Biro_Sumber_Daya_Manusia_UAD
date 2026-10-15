@@ -51,5 +51,7 @@ class Vacancy extends Model
         return $this->hasMany(Application::class, 'vacancy_id', 'id');
     }
 
+    public $timestamps = false;
+
     // @enddbml-sync:relations
 }
