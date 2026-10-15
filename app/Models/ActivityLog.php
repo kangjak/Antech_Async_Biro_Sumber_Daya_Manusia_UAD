@@ -39,5 +39,7 @@ class ActivityLog extends Model
         return $this->belongsTo(User::class, 'actor_id', 'id');
     }
 
+    public $timestamps = false;
+
     // @enddbml-sync:relations
 }

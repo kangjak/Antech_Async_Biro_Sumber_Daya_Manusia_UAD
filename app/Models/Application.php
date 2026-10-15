@@ -63,5 +63,7 @@ class Application extends Model
         return $this->belongsTo(User::class, 'stage_assessed_by', 'id');
     }
 
+    public $timestamps = false;
+
     // @enddbml-sync:relations
 }

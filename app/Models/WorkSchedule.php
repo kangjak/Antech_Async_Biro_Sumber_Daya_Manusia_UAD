@@ -52,5 +52,6 @@ class WorkSchedule extends Model
         return $this->belongsTo(User::class, 'created_by', 'id');
     }
 
+    public $timestamps = false;
     // @enddbml-sync:relations
 }

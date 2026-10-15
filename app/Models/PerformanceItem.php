@@ -40,5 +40,7 @@ class PerformanceItem extends Model
         return $this->belongsTo(PerformanceEvaluation::class, 'evaluation_id', 'id');
     }
 
+    public $timestamps = false;
+
     // @enddbml-sync:relations
 }

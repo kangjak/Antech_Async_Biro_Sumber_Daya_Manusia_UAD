@@ -59,7 +59,7 @@ class PerformanceEvaluation extends Model
         return $this->belongsTo(Employee::class, 'employee_id', 'id');
     }
 
-    public function employee()
+    public function reviewer() // dari employee ke reviewer
     {
         return $this->belongsTo(Employee::class, 'reviewer_id', 'id');
     }
@@ -68,6 +68,8 @@ class PerformanceEvaluation extends Model
     {
         return $this->hasMany(PerformanceItem::class, 'evaluation_id', 'id');
     }
+
+    public $timestamps = false;
 
     // @enddbml-sync:relations
 }

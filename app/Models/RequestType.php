@@ -45,5 +45,7 @@ class RequestType extends Model
         return $this->hasMany(EmployeeRequest::class, 'request_type_id', 'id');
     }
 
+    public $timestamps = false;
+
     // @enddbml-sync:relations
 }

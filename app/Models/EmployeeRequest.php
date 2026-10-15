@@ -62,10 +62,12 @@ class EmployeeRequest extends Model
         return $this->belongsTo(RequestType::class, 'request_type_id', 'id');
     }
 
-    public function employee()
+    public function approver() // dari employee ke approver
     {
         return $this->belongsTo(Employee::class, 'approver_id', 'id');
     }
+
+    public $timestamps = false;
 
     // @enddbml-sync:relations
 }
