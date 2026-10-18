@@ -2,29 +2,42 @@
 
 namespace Database\Factories;
 
-use App\Models\PerformanceItem;
+use App\Models\PerformanceEvaluation;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends Factory<PerformanceItem>
- */
 class PerformanceItemFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
+        $evaluationId = PerformanceEvaluation::query()
+            ->inRandomOrder()
+            ->value('id');
+
+        $target = fake()->numberBetween(50, 100);
+
+        $realization = fake()->numberBetween(40, 120);
+
+        // Skor berdasarkan perbandingan realisasi dan target.
+        $score = min(100, round(($realization / $target) * 100, 2));
+
         return [
-            'evaluation_id' => \App\Models\PerformanceEvaluation::query()->inRandomOrder()->value('id'),
+            'evaluation_id' => $evaluationId,
+
             'description' => fake()->sentence(),
-            'unit' => fake()->randomElement(['Persentase', 'Jumlah', 'Jam']),
-            'target_value' => fake()->randomFloat(2, 50, 100),
-            'realization_value' => fake()->randomFloat(2, 40, 100),
-            'weight' => fake()->randomFloat(2, 5, 30),
-            'score' => fake()->randomFloat(2, 60, 100),
+
+            'unit' => fake()->randomElement([
+                'Persentase',
+                'Jumlah',
+                'Jam',
+            ]),
+
+            'target_value' => $target,
+
+            'realization_value' => $realization,
+
+            'weight' => fake()->numberBetween(5, 30),
+
+            'score' => $score,
         ];
     }
 }

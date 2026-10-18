@@ -2,35 +2,69 @@
 
 namespace Database\Factories;
 
-use App\Models\RankHistory;
+use App\Models\Employee;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends Factory<RankHistory>
- */
 class RankHistoryFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
+        $employee = Employee::query()
+            ->where('category', 'Dosen')
+            ->inRandomOrder()
+            ->first();
+
+        $approverId = null;
+
+        if ($employee) {
+            $approverId = Employee::query()
+                ->where('id', '!=', $employee->id)
+                ->inRandomOrder()
+                ->value('id');
+        }
+
+        $submittedAt = fake()->dateTimeBetween('-2 years', '-2 months');
+        $decidedAt = fake()->dateTimeBetween($submittedAt, 'now');
+
+        $rank = fake()->randomElement([
+            'Asisten Ahli',
+            'Lektor',
+        ]);
+
         return [
-            'employee_id' => \App\Models\Employee::query()->inRandomOrder()->value('id'),
-            'rank_name' => fake()->randomElement(['Asisten Ahli', 'Lektor']),
-            'credit_points' => fake()->randomFloat(2, 100, 300),
+            'employee_id' => $employee?->id,
+
+            'rank_name' => $rank,
+
+            'credit_points' => fake()->numberBetween(100, 300),
+
             'is_accelerated' => false,
+
             'status' => 'Disetujui',
-            'submitted_at' => now()->subMonths(2),
-            'approver_id' => \App\Models\Employee::query()->inRandomOrder()->value('id'),
-            'decided_at' => now()->subMonth(),
-            'effective_date' => now()->startOfYear()->toDateString(),
-            'sk_number' => fake()->unique()->numerify('SK-####-####'),
-            'sk_date' => now()->subMonth()->toDateString(),
+
+            'submitted_at' => $submittedAt,
+
+            'approver_id' => $approverId,
+
+            'decided_at' => $decidedAt,
+
+            'effective_date' => fake()->dateTimeBetween(
+                $decidedAt,
+                'now'
+            ),
+
+            'sk_number' => fake()->unique()->bothify('SK-####-####'),
+
+            'sk_date' => $decidedAt,
+
             'decision_note' => fake()->sentence(),
-            'rank_grade' => fake()->randomElement(['III/a', 'III/b', 'III/c']),
+
+            'rank_grade' => fake()->randomElement([
+                'III/a',
+                'III/b',
+                'III/c',
+            ]),
+
             'functional_position' => 'Dosen',
         ];
     }
