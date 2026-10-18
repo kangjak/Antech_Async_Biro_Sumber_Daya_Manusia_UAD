@@ -2,27 +2,31 @@
 
 namespace Database\Factories;
 
-use App\Models\LeaveBalance;
+use App\Models\Employee;
+use App\Models\RequestType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends Factory<LeaveBalance>
- */
 class LeaveBalanceFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
+        $employeeId = Employee::query()->inRandomOrder()->value('id');
+
+        $requestTypeId = RequestType::query()
+            ->where('kind', 'Cuti')
+            ->where('is_active', true)
+            ->inRandomOrder()
+            ->value('id');
+
+        $quota = fake()->numberBetween(8, 15);
+        $used = fake()->numberBetween(0, $quota);
+
         return [
-            'employee_id' => \App\Models\Employee::query()->inRandomOrder()->value('id'),
-            'request_type_id' => \App\Models\RequestType::query()->inRandomOrder()->value('id'),
+            'employee_id' => $employeeId,
+            'request_type_id' => $requestTypeId,
             'year' => now()->year,
-            'quota_days' => fake()->numberBetween(8, 15),
-            'used_days' => fake()->numberBetween(0, 5),
+            'quota_days' => $quota,
+            'used_days' => $used,
             'version' => 1,
         ];
     }

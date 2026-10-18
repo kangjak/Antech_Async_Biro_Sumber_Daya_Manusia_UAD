@@ -2,33 +2,72 @@
 
 namespace Database\Factories;
 
-use App\Models\EmployeeRequest;
+use App\Models\Employee;
+use App\Models\RequestType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends Factory<EmployeeRequest>
- */
 class EmployeeRequestFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
+        $employeeId = Employee::query()
+            ->inRandomOrder()
+            ->value('id');
+
+        $requestType = RequestType::query()
+            ->where('is_active', true)
+            ->inRandomOrder()
+            ->first();
+
+        $kind = $requestType?->kind ?? 'Cuti';
+
+        $startDate = fake()->dateTimeBetween('+1 day', '+3 months');
+        $startDate = \Carbon\Carbon::instance($startDate);
+
+        $totalDays = fake()->numberBetween(1, 5);
+
+        $endDate = $startDate->copy()->addDays($totalDays - 1);
+
+        $status = fake()->randomElement([
+            'Menunggu',
+            'Disetujui',
+            'Ditolak',
+        ]);
+
+        $employee = Employee::find($employeeId);
+
+        $approverId = $employee?->supervisor_id;
+
+        if (!$approverId && $employeeId) {
+            $approverId = Employee::query()
+                ->where('id', '!=', $employeeId)
+                ->inRandomOrder()
+                ->value('id');
+        }
+
         return [
-            'request_kind' => 'Cuti',
-            'employee_id' => \App\Models\Employee::query()->inRandomOrder()->value('id'),
-            'request_type_id' => \App\Models\RequestType::query()->inRandomOrder()->value('id'),
-            'start_date' => fake()->dateTimeBetween('now', '+3 months')->format('Y-m-d'),
-            'end_date' => fake()->dateTimeBetween('+3 months', '+4 months')->format('Y-m-d'),
-            'total_days' => fake()->numberBetween(1, 5),
-            'period_label' => (string) now()->year,
+            'request_kind' => $kind,
+            'employee_id' => $employeeId,
+            'request_type_id' => $requestType?->id,
+            'start_date' => $startDate->toDateString(),
+            'end_date' => $endDate->toDateString(),
+            'total_days' => $totalDays,
+            'work_date' => null,
+            'start_time' => null,
+            'end_time' => null,
+            'total_hours' => null,
+            'period_label' => $startDate->format('Y'),
+            'amount' => null,
             'reason' => fake()->sentence(),
-            'status' => 'Menunggu',
-            'approver_id' => \App\Models\Employee::query()->inRandomOrder()->value('id'),
+            'status' => $status,
+            'approver_id' => $approverId,
             'submitted_at' => now(),
+            'decided_at' => $status === 'Menunggu'
+                ? null
+                : now(),
+            'decision_note' => $status === 'Menunggu'
+                ? null
+                : fake()->sentence(),
             'version' => 1,
         ];
     }

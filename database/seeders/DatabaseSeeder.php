@@ -2,45 +2,52 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\User;
+use App\Models\Unit;
+use App\Models\RequestType;
+use App\Models\Employee;
+use App\Models\Vacancy;
+use App\Models\Application;
+use App\Models\LeaveBalance;
+use App\Models\EmployeeRequest;
+use App\Models\WorkSchedule;
+use App\Models\RankHistory;
+use App\Models\DevelopmentActivity;
+use App\Models\BpjsMembership;
+use App\Models\PerformanceEvaluation;
+use App\Models\PerformanceItem;
+use App\Models\ActivityLog;
 
 class DatabaseSeeder extends Seeder
 {
-    use WithoutModelEvents;
-
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // 1. Data referensi
+        User::factory(20_000)->create();
+        Unit::factory(100)->create();
+        RequestType::factory(90)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        // 2. Data pegawai
+        Employee::factory(10_000)->create();
+        Vacancy::factory(500)->create();
+        WorkSchedule::factory(100)->create();
 
-        // untuk manggil facotry
+        // 3. Data transaksi
+        Application::factory(30_000)->create();
+        LeaveBalance::factory(10_000)->create();
+        EmployeeRequest::factory(30_000)->create();
 
-        \App\Models\User::factory(20)->create();
-        \App\Models\Unit::factory(10)->create();
-        \App\Models\RequestType::factory(10)->create();
+        // 4. Riwayat kepegawaian
+        RankHistory::factory(10_000)->create();
+        DevelopmentActivity::factory(20_000)->create();
+        BpjsMembership::factory(20_000)->create();
 
-        \App\Models\Employee::factory(1000)->create();
-        \App\Models\Vacancy::factory(150)->create();
+        // 5. Evaluasi kinerja
+        PerformanceEvaluation::factory(20_000)->create();
+        PerformanceItem::factory(50_000)->create();
 
-        \App\Models\Application::factory(1000)->create();
-        \App\Models\LeaveBalance::factory(1000)->create();
-        \App\Models\EmployeeRequest::factory(1000)->create();
-        \App\Models\WorkSchedule::factory(100)->create();
-        \App\Models\RankHistory::factory(1000)->create();
-        \App\Models\DevelopmentActivity::factory(1000)->create();
-        \App\Models\BpjsMembership::factory(1000)->create();
-
-        \App\Models\PerformanceEvaluation::factory(1000)->create();
-        \App\Models\PerformanceItem::factory(5000)->create();
-        \App\Models\ActivityLog::factory(5000)->create();
+        // 6. Log aktivitas
+        ActivityLog::factory(100_000)->create();
     }
 }

@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\BpjsMembership;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Employee;
 
 /**
  * @extends Factory<BpjsMembership>
@@ -16,15 +17,35 @@ class BpjsMembershipFactory extends Factory
      * @return array<string, mixed>
      */
     public function definition(): array
-    {
-        return [
-            'employee_id' => \App\Models\Employee::query()->inRandomOrder()->value('id'),
-            'bpjs_type' => fake()->randomElement(['Kesehatan', 'Ketenagakerjaan']),
-            'membership_number' => fake()->unique()->numerify('############'),
-            'registered_date' => fake()->dateTimeBetween('-5 years', 'now')->format('Y-m-d'),
-            'status' => 'Aktif',
-            'end_date' => null,
-            'archived_at' => null,
-        ];
-    }
+{
+    $employeeId = \App\Models\Employee::query()
+        ->inRandomOrder()
+        ->value('id');
+
+    $bpjsType = fake()->randomElement([
+        'Kesehatan',
+        'Ketenagakerjaan',
+    ]);
+
+    $registeredDate = fake()->dateTimeBetween(
+        '-5 years',
+        'now'
+    );
+
+    return [
+        'employee_id' => $employeeId,
+
+        'bpjs_type' => $bpjsType,
+
+        'membership_number' => fake()->unique()->numerify('############'),
+
+        'registered_date' => $registeredDate,
+
+        'status' => 'Aktif',
+
+        'end_date' => null,
+
+        'archived_at' => null,
+    ];
+}
 }
