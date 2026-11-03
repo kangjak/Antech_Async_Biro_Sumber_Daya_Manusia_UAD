@@ -5,22 +5,31 @@ namespace Database\Factories;
 use App\Models\Employee;
 use App\Models\Unit;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use RuntimeException;
 
 /**
  * @extends Factory<Employee>
  */
 class EmployeeFactory extends Factory
 {
+    protected static ?array $unitIds = null;
+
     public function definition(): array
     {
+        self::$unitIds ??= Unit::query()->pluck('id')->all();
+
+        if (empty(self::$unitIds)) {
+            throw new RuntimeException(
+                'Data Unit belum tersedia. Buat Unit terlebih dahulu.'
+            );
+        }
+
         $category = fake()->randomElement([
             'Dosen',
             'Tenaga Kependidikan',
         ]);
 
-        $unitId = Unit::query()
-            ->inRandomOrder()
-            ->value('id');
+        $unitId = fake()->randomElement(self::$unitIds);
 
         $birthDate = fake()->dateTimeBetween('-60 years', '-23 years');
         $joinDate = fake()->dateTimeBetween('-20 years', 'now');

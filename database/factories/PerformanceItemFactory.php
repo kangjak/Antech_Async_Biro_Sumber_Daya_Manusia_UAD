@@ -4,14 +4,23 @@ namespace Database\Factories;
 
 use App\Models\PerformanceEvaluation;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use RuntimeException;
 
 class PerformanceItemFactory extends Factory
 {
+    protected static ?array $evaluationIds = null;
+
     public function definition(): array
     {
-        $evaluationId = PerformanceEvaluation::query()
-            ->inRandomOrder()
-            ->value('id');
+        self::$evaluationIds ??= PerformanceEvaluation::query()->pluck('id')->all();
+
+        if (empty(self::$evaluationIds)) {
+            throw new RuntimeException(
+                'Data PerformanceEvaluation belum tersedia. Buat PerformanceEvaluation terlebih dahulu.'
+            );
+        }
+
+        $evaluationId = fake()->randomElement(self::$evaluationIds);
 
         $target = fake()->numberBetween(50, 100);
 

@@ -3,24 +3,33 @@
 namespace Database\Factories;
 
 use App\Models\BpjsMembership;
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Employee;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use RuntimeException;
 
 /**
  * @extends Factory<BpjsMembership>
  */
 class BpjsMembershipFactory extends Factory
 {
+    protected static ?array $employeeIds = null;
+
     /**
      * Define the model's default state.
      *
      * @return array<string, mixed>
      */
     public function definition(): array
-{
-    $employeeId = \App\Models\Employee::query()
-        ->inRandomOrder()
-        ->value('id');
+    {
+        self::$employeeIds ??= Employee::query()->pluck('id')->all();
+
+        if (empty(self::$employeeIds)) {
+            throw new RuntimeException(
+                'Data Employee belum tersedia. Buat Employee terlebih dahulu.'
+            );
+        }
+
+        $employeeId = fake()->randomElement(self::$employeeIds);
 
     $bpjsType = fake()->randomElement([
         'Kesehatan',

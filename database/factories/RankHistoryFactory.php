@@ -4,24 +4,30 @@ namespace Database\Factories;
 
 use App\Models\Employee;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use RuntimeException;
 
 class RankHistoryFactory extends Factory
 {
+    protected static ?array $dosenIds = null;
+    protected static ?array $allEmployeeIds = null;
+
     public function definition(): array
     {
-        $employee = Employee::query()
+        self::$dosenIds ??= Employee::query()
             ->where('category', 'Dosen')
-            ->inRandomOrder()
-            ->first();
+            ->pluck('id')
+            ->all();
 
-        $approverId = null;
+        self::$allEmployeeIds ??= Employee::query()->pluck('id')->all();
 
-        if ($employee) {
-            $approverId = Employee::query()
-                ->where('id', '!=', $employee->id)
-                ->inRandomOrder()
-                ->value('id');
+        if (empty(self::$dosenIds)) {
+            throw new RuntimeException(
+                'Data Employee dengan kategori Dosen belum tersedia. Buat Employee Dosen terlebih dahulu.'
+            );
         }
+
+        $employeeId = fake()->randomElement(self::$dosenIds);
+        $approverId = fake()->randomElement(self::$allEmployeeIds);
 
         $submittedAt = fake()->dateTimeBetween('-2 years', '-2 months');
         $decidedAt = fake()->dateTimeBetween($submittedAt, 'now');
@@ -32,7 +38,7 @@ class RankHistoryFactory extends Factory
         ]);
 
         return [
-            'employee_id' => $employee?->id,
+            'employee_id' => $employeeId,
 
             'rank_name' => $rank,
 

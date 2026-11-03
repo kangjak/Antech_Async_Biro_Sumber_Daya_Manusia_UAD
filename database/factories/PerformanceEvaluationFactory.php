@@ -4,14 +4,23 @@ namespace Database\Factories;
 
 use App\Models\Employee;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use RuntimeException;
 
 class PerformanceEvaluationFactory extends Factory
 {
+    protected static ?array $employeeIds = null;
+
     public function definition(): array
     {
-        $employeeId = Employee::query()
-            ->inRandomOrder()
-            ->value('id');
+        self::$employeeIds ??= Employee::query()->pluck('id')->all();
+
+        if (empty(self::$employeeIds)) {
+            throw new RuntimeException(
+                'Data Employee belum tersedia. Buat Employee terlebih dahulu.'
+            );
+        }
+
+        $employeeId = fake()->randomElement(self::$employeeIds);
 
         // Komponen kredit
         $teachingCredit = fake()->numberBetween(40, 100);
@@ -54,10 +63,7 @@ class PerformanceEvaluationFactory extends Factory
             $rating = 'Cukup';
         }
 
-        $reviewerId = Employee::query()
-            ->where('id', '!=', $employeeId)
-            ->inRandomOrder()
-            ->value('id');
+        $reviewerId = fake()->randomElement(self::$employeeIds);
 
         return [
             'employee_id' => $employeeId,
