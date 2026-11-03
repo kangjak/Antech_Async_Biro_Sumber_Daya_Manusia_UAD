@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Unit extends Model
 {
     use HasFactory;
+
+    public $timestamps = false;
 
     // @dbml-sync:table-property
     protected $table = 'unit';
@@ -16,39 +19,39 @@ class Unit extends Model
     // @dbml-sync:fillable
     protected $fillable = [
         'name',
-		'unit_type',
-		'is_active'
+        'unit_type',
+        'is_active',
     ];
     // @enddbml-sync:fillable
 
     // @dbml-sync:casts
-    protected $casts = [
-        'is_active' => 'boolean'
-    ];
+    protected function casts(): array
+    {
+        return [
+            'is_active' => 'boolean',
+        ];
+    }
     // @enddbml-sync:casts
 
     // @dbml-sync:relations
-    public function employees()
+    public function employees(): HasMany
     {
         return $this->hasMany(Employee::class, 'unit_id', 'id');
     }
 
-    public function users()
+    public function users(): HasMany
     {
         return $this->hasMany(User::class, 'role_unit_id', 'id');
     }
 
-    public function vacancies()
+    public function vacancies(): HasMany
     {
         return $this->hasMany(Vacancy::class, 'unit_id', 'id');
     }
 
-    public function workSchedules()
+    public function workSchedules(): HasMany
     {
         return $this->hasMany(WorkSchedule::class, 'unit_id', 'id');
     }
-
-    public $timestamps = false;
-
     // @enddbml-sync:relations
 }

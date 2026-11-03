@@ -5,18 +5,36 @@ namespace Database\Factories;
 use App\Models\Employee;
 use App\Models\RequestType;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use RuntimeException;
 
 class LeaveBalanceFactory extends Factory
 {
+    protected static ?array $employeeIds = null;
+    protected static ?array $requestTypeIds = null;
+
     public function definition(): array
     {
-        $employeeId = Employee::query()->inRandomOrder()->value('id');
-
-        $requestTypeId = RequestType::query()
+        self::$employeeIds ??= Employee::query()->pluck('id')->all();
+        self::$requestTypeIds ??= RequestType::query()
             ->where('kind', 'Cuti')
             ->where('is_active', true)
-            ->inRandomOrder()
-            ->value('id');
+            ->pluck('id')
+            ->all();
+
+        if (empty(self::$employeeIds)) {
+            throw new RuntimeException(
+                'Data Employee belum tersedia. Buat Employee terlebih dahulu.'
+            );
+        }
+
+        if (empty(self::$requestTypeIds)) {
+            throw new RuntimeException(
+                'Data RequestType (Cuti) belum tersedia. Buat RequestType terlebih dahulu.'
+            );
+        }
+
+        $employeeId = fake()->randomElement(self::$employeeIds);
+        $requestTypeId = fake()->randomElement(self::$requestTypeIds);
 
         $quota = fake()->numberBetween(8, 15);
         $used = fake()->numberBetween(0, $quota);

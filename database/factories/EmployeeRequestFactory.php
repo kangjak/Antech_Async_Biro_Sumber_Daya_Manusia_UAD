@@ -5,21 +5,36 @@ namespace Database\Factories;
 use App\Models\Employee;
 use App\Models\RequestType;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use RuntimeException;
 
 class EmployeeRequestFactory extends Factory
 {
+    protected static ?array $employeeIds = null;
+    protected static ?array $requestTypes = null;
+
     public function definition(): array
     {
-        $employeeId = Employee::query()
-            ->inRandomOrder()
-            ->value('id');
-
-        $requestType = RequestType::query()
+        self::$employeeIds ??= Employee::query()->pluck('id')->all();
+        self::$requestTypes ??= RequestType::query()
             ->where('is_active', true)
-            ->inRandomOrder()
-            ->first();
+            ->get(['id', 'kind'])
+            ->toArray();
 
-        $kind = $requestType?->kind ?? 'Cuti';
+        if (empty(self::$employeeIds)) {
+            throw new RuntimeException(
+                'Data Employee belum tersedia. Buat Employee terlebih dahulu.'
+            );
+        }
+
+        if (empty(self::$requestTypes)) {
+            throw new RuntimeException(
+                'Data RequestType belum tersedia. Buat RequestType terlebih dahulu.'
+            );
+        }
+
+        $employeeId = fake()->randomElement(self::$employeeIds);
+        $requestType = fake()->randomElement(self::$requestTypes);
+        $kind = $requestType['kind'] ?? 'Cuti';
 
         $startDate = fake()->dateTimeBetween('+1 day', '+3 months');
         $startDate = \Carbon\Carbon::instance($startDate);
@@ -34,21 +49,12 @@ class EmployeeRequestFactory extends Factory
             'Ditolak',
         ]);
 
-        $employee = Employee::find($employeeId);
-
-        $approverId = $employee?->supervisor_id;
-
-        if (!$approverId && $employeeId) {
-            $approverId = Employee::query()
-                ->where('id', '!=', $employeeId)
-                ->inRandomOrder()
-                ->value('id');
-        }
+        $approverId = fake()->randomElement(self::$employeeIds);
 
         return [
             'request_kind' => $kind,
             'employee_id' => $employeeId,
-            'request_type_id' => $requestType?->id,
+            'request_type_id' => $requestType['id'] ?? null,
             'start_date' => $startDate->toDateString(),
             'end_date' => $endDate->toDateString(),
             'total_days' => $totalDays,
